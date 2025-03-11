@@ -1,0 +1,5 @@
+*.pyc
+.snakemake
+scripts/.ipynb_checkpoints/
+.ipynb_checkpoints/
+logs
