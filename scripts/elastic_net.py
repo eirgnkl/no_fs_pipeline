@@ -23,36 +23,15 @@ def run_elastic_net(
         # featsel,
         **kwargs):
     
-    #adding feature selection as a param to select correct parts of the adata
-    # if featsel == "hvg":
     X_train = adata_rna_train.X  
     X_test = adata_rna_test.X  
     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"] 
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # else:
-    #     raise ValueError(f"Unsupported feature selection method: {featsel}")
-    
+
     # Convert to dense if needed
     X_train = convert_to_dense(X_train)
     X_test = convert_to_dense(X_test)
     Y_train = convert_to_dense(Y_train)
     Y_test = convert_to_dense(Y_test)
-
 
     # Retrieve hyperparameters from the params dictionary
     alpha = float(params['alpha'])

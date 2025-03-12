@@ -44,29 +44,9 @@ def run_xgboost(
         # featsel,
         **kwargs):
     
-    #adding feature selection as a param to select correct parts of the adata
-    # if featsel == "hvg":
     X_train = adata_rna_train.X  
     X_test = adata_rna_test.X  
     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"] 
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # else:
-    #     raise ValueError(f"Unsupported feature selection method: {featsel}")
 
     if issparse(X_train):
         X_train = X_train.toarray()
@@ -153,13 +133,3 @@ def run_xgboost(
     })
 
     return metrics, predictions
-# Got this error, had to add conversion to and from GPU arrays for the run of the model
-# UserWarning: [14:56:43] WARNING: /home/conda/feedstock_root/build_artifacts/xgboost-split_1738880369036/work/src/common/error_msg.cc:58: 
-# Falling back to prediction using DMatrix due to mismatched devices. 
-# This might lead to higher memory usage and slower performance. 
-# XGBoost is running on: cuda:0, while the input data is on: cpu.
-# Potential solutions:
-# - Use a data structure that matches the device ordinal in the booster.
-# - Set the device for booster before call to inplace_predict.
-
-# This warning will only be shown once.

@@ -14,34 +14,11 @@ def run_lasso(
         adata_msi_train,
         adata_msi_test,
         params, 
-        # featsel,
         **kwargs):
 
-    #adding feature selection as a param to select correct parts of the adata
-    # if featsel == "hvg":
     X_train = adata_rna_train.X  
     X_test = adata_rna_test.X  
     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"] 
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # else:
-    #     raise ValueError(f"Unsupported feature selection method: {featsel}")
-
-
 
     # Lasso regression with specified alpha
     alpha = float(params['alpha'] ) # have as function parameter

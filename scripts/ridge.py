@@ -17,31 +17,9 @@ def run_ridge_reg(
         # featsel,
         **kwargs):
     
-    #adding feature selection as a param to select correct parts of the adata
-    #adding feature selection as a param to select correct parts of the adata
-    # if featsel == "hvg":
     X_train = adata_rna_train.X  
     X_test = adata_rna_test.X  
     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "hvg_svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"] 
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd":
-    #     X_train = adata_rna_train.obsm["svd_features"]
-    #     X_test = adata_rna_test.obsm["svd_features"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # elif featsel == "svd_graph":
-    #     X_train = adata_rna_train.obsm["svd_graph"]
-    #     X_test = adata_rna_test.obsm["svd_graph"]
-    #     Y_train, Y_test = adata_msi_train.X, adata_msi_test.X
-    # else:
-    #     raise ValueError(f"Unsupported feature selection method: {featsel}")
-
 
     # Ridge regression with specified alpha
     alpha = float(params['alpha'] ) # have as function parameter
@@ -60,7 +38,6 @@ def run_ridge_reg(
     rmse_test = root_mean_squared_error(Y_test, Y_pred)
     # r2_train = r2_score(matching_msi_train, msi_train_pred)
     r2_test = r2_score(Y_test, Y_pred)
-
     mae_test = mean_absolute_error(Y_test, Y_pred)
 
     #Save results to a DataFrame

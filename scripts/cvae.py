@@ -159,8 +159,6 @@ def run_cvae(adata_rna_train,
         r2_test = r2_score(Y_test_np, Y_pred)
         mae_test = mean_absolute_error(Y_test_np, Y_pred)
 
-
-
         #Save results to a DataFrame
         metrics = pd.DataFrame({
             'rmse': [rmse_test],
@@ -177,4 +175,3 @@ def run_cvae(adata_rna_train,
         })
 
     return metrics, predictions
-
