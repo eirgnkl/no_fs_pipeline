@@ -30,9 +30,6 @@ TASKS:
         params: params/ridge_params.tsv
       linear:
         params: params/linreg_params.tsv
-
-
-
 ```
 
 ## 📈 Models Implemented
