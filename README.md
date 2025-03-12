@@ -1,15 +1,15 @@
-## Pipeline for Metabolite Prediction from Gene Expression
+## 🐍 Pipeline for Metabolite Prediction from Gene Expression
 
 This repository contains a Snakemake pipeline for predicting **metabolic distribution from gene expression data** using several **machine learning models.** For this version of the pipeline **there is no preprocessing** taking place, as it's tedious and msi data preprocessing is not standardized yet. For this, prepare the data as you wish beforehand, store them in desired path and it in the config.yaml.
 
-## Pipeline Structure
+## 🏗️ Pipeline Structure
 
 The pipeline is structured as follows:
 
 1. **Model Training**: Runs Ridge, Lasso, Linear Regression, XGBoost and a CVAE.
 2. **Evaluation**: Assesses performance using 5 different metrics (RMSE, MAE, Pearson and Spearmann Correlation and $R^2$).
 
-## How to set Tasks and Models:
+## 🔧 How to set Tasks and Models:
 
 Visit `config.yaml` and follow these steps:
 
@@ -35,7 +35,7 @@ TASKS:
 
 ```
 
-## Models Implemented
+## 📈 Models Implemented
 
 The pipeline supports the following regression models:
 
@@ -50,7 +50,7 @@ In case you want to add new models, be aware that the models is called through t
 
 Each model has parameters that users can configure in `params/{method}_params.tsv`.
 
-## Running the Pipeline
+## 🏃 Running the Pipeline
 
 To execute the pipeline, use:
 
@@ -64,9 +64,21 @@ For dry-run mode:
 snakemake --dry-run
 ```
 
----
+## 🌈Visualization
 
-## Output
+### Model Performance Visualization
+
+After the pipeline completes, a **visualization step** generates comparative plots for each task. These plots provide a clear view of model performance across different **feature selection techniques**. User sets in snakefile the **desired number of best models** to view and compare in the params `rule visualize`
+
+### Visualization Includes:
+
+- 📊 **Bar charts** showing model performance for each metric (**RMSE, Pearson, Spearman, R²**).
+- 🎯 **Feature selection methods displayed inside bars** instead of model parameters.
+- ⭐ **Best-performing models highlighted** for each metric.
+
+These plots help assess **which model with which parameters and feature selection techniques yield the best results** for each task.
+
+## 🗂️ Output
 
 Results are stored in:
 
@@ -78,7 +90,6 @@ data/reports/{TASK}/  # Best results for each task
   │   ├── predictions.tsv  # Predicted metabolites
 
 ```
-
 
 *Alternative to using profile_gpu:*
 
