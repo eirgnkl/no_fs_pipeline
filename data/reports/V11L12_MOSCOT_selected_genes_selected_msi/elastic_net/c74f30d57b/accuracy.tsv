@@ -1,2 +1,0 @@
-rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
-0.29856254684364614	0.22933317724737665	-0.06250515725943796	0.9704251033509448	0.9310789455438767	V11L12_MOSCOT_selected_genes_selected_msi	elastic_net	{'alpha': 0.001, 'l1_ratio': 0.9}	c74f30d57b

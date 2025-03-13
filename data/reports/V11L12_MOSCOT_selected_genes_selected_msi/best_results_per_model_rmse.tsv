@@ -1,7 +1,0 @@
-rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
-0.2968873332354447	0.2279271216637207	-0.0498085372416255	0.970726465575842	0.9340978265866218	V11L12_MOSCOT_selected_genes_selected_msi	elastic_net	{'alpha': 0.1, 'l1_ratio': 0.1}	ed01bc4514
-0.2969186531994603	0.2279624321733581	-0.0499797556340021	0.9707199163277724	0.9340818881373112	V11L12_MOSCOT_selected_genes_selected_msi	lasso	{'alpha': 0.01}	99ef2f1729
-0.2969916989919139	0.2296646290075645	-0.0492725596961193	0.9705308877026096	0.932623664453124	V11L12_MOSCOT_selected_genes_selected_msi	xgboost	{'alpha': 30, 'lambda': 80, 'max_depth': 4, 'learning_rate': 0.03, 'n_estimators': 800, 'subsample': 0.85, 'colsample_bytree': 0.75, 'min_child_weight': 2, 'early_stopping_rounds': 15, 'n_jobs': 20}	cfb59f66ce
-0.2978513471573255	0.2287801399970984	-0.0576873703983003	0.9705667339871898	0.931462762639416	V11L12_MOSCOT_selected_genes_selected_msi	ridge	{'alpha': 200.0}	e4d88b49a6
-0.2992434468297902	0.229803364396313	-0.0686780377185255	0.970322303733046	0.9306796229284636	V11L12_MOSCOT_selected_genes_selected_msi	linear	{'parm': 0}	31f7d88233
-0.3374364148394705	0.2411828190088272	-0.1657557189464569	0.96722436	0.9263586482445774	V11L12_MOSCOT_selected_genes_selected_msi	cvae	{'hidden_dim': 256, 'latent_dim': 20, 'lr': 0.0005, 'epochs': 150, 'batch_size': 64}	4306df8834

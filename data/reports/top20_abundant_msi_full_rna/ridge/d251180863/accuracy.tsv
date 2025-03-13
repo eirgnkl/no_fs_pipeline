@@ -1,2 +1,0 @@
-rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
-0.6368690442333544	0.49273354158920785	-1.7776630103000817	0.5869432587808376	0.6026906249778319	top20_abundant_msi_full_rna	ridge	{'alpha': 0.8}	d251180863

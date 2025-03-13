@@ -1,2 +1,0 @@
-rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
-0.9278021536713076	0.6996826529502869	-5.433210849761963	0.44931066	0.4603402755863808	top20_abundant_msi_full_rna	cvae	{'hidden_dim': 256, 'latent_dim': 20, 'lr': 0.0005, 'epochs': 150, 'batch_size': 64}	360154135f
