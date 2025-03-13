@@ -4,6 +4,10 @@ import scanpy as sc
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import torch.nn.functional as F
+from torch_geometric.data import Data
+from torch_geometric.nn import GCNConv
+from sklearn.neighbors import NearestNeighbors
 from sklearn.metrics import r2_score, mean_squared_error
 from scipy.stats import pearsonr, spearmanr
 from sklearn.metrics import mean_absolute_error
@@ -47,7 +51,6 @@ class MultiLayerGCN(torch.nn.Module):
         
         # Final GCN layer (output layer)
         x = self.output_layer(x, edge_index)
-        
         return x  
 
 
@@ -77,19 +80,20 @@ def run_gnn(adata_rna_train,
     Y_test = Y_test.to(device)
 
     # --- Hyperparameters ---
-    hidden_dim = int(params.get('hidden_dim', 128))
-    latent_dim = int(params.get('latent_dim', 10))
-    lr = float(params.get('lr', 1e-3))
-    epochs = int(params.get('epochs', 100))
-    batch_size = int(params.get('batch_size', 32))
+    hidden_dim = int(params.get('hidden_dim', 256))
+    lr = float(params.get('lr', 0.001))
+    num_layers = int(params.get('layers', 3))
+    dropout = float(params.get('dropout', 0.5))
+    k_neighbors = int(params.get('neighbours', 15))
+    epochs = int(params.get('epochs', 2000))
 
     input_dim = X_train.shape[1]
     output_dim = Y_train.shape[1]
 
     # --- Initialize model and optimizer ---
-    model = CVAE(input_dim, output_dim, hidden_dim, latent_dim).to(device)
+    model = MultiLayerGCN(X_train.shape[1], hidden_dim, Y_train.shape[1], num_layers=num_layers, dropout=dropout).to(device)
     optimizer = optim.Adam(model.parameters(), lr=lr)
-    mse_loss = nn.MSELoss()
+    criterion = torch.nn.MSELoss()
 
     # --- Training loop ---
     model.train()
