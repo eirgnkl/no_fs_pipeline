@@ -1,0 +1,2 @@
+rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
+0.33170365851602457	0.2539615155941145	0.08031792250765024	0.7340943662231272	0.6824347993849914	top10_abundant_msi_full_rna	lasso	{'alpha': 0.01}	0ad93aa331

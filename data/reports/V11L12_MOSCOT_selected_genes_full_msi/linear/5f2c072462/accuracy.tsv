@@ -1,0 +1,2 @@
+rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
+0.23382232818827486	0.1831717630357003	-0.039593367997628096	0.9613594191293932	0.892597104832038	V11L12_MOSCOT_selected_genes_full_msi	linear	{'parm': 0}	5f2c072462

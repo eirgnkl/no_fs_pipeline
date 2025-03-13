@@ -70,11 +70,11 @@ TASKS:
 
   'V11L12_MOSCOT_selected_genes_full_msi':
     input_rna: /lustre/groups/ml01/workspace/eirini.giannakoulia/hand_prep/V11L12-038_A1.RNA_MOSCOT_paired_selectedgenesDHB.h5ad
-    input_metabolomics: /lustre/groups/ml01/workspace/anastasia.litinetskaya/code/vitatrack/datasets/V11L12-038_B1.MSI_MOSCOT_paired.h5ad
+    input_metabolomics: /lustre/groups/ml01/workspace/anastasia.litinetskaya/code/vitatrack/datasets/V11L12-038_A1.MSI_MOSCOT_paired.h5ad
     split: half_split
     methods:
       ridge:
-        params: params/ridge_params.tsvz
+        params: params/ridge_params.tsv
       lasso:
         params: params/lasso_params.tsv
       linear:

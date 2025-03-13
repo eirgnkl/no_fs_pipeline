@@ -1,0 +1,2 @@
+rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
+0.29826780568790373	0.2320167480675453	-0.05974112607448975	0.970301095501643	0.9334022328582413	V11L12_MOSCOT_selected_genes_selected_msi	xgboost	{'alpha': 50, 'lambda': 100, 'max_depth': 3, 'learning_rate': 0.05, 'n_estimators': 1000, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 3, 'early_stopping_rounds': 10, 'n_jobs': 20}	509f784210

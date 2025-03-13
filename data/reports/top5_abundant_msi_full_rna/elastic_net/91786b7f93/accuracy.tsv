@@ -1,0 +1,2 @@
+rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
+0.31946155106328855	0.24574117262187462	-0.0010884798942614627	0.6965667682112632	0.6967431178382	top5_abundant_msi_full_rna	elastic_net	{'alpha': 1.0, 'l1_ratio': 0.5}	91786b7f93

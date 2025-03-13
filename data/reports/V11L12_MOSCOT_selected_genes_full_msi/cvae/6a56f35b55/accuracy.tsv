@@ -1,0 +1,2 @@
+rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
+0.2590838354963105	0.18996454775333405	-0.1240394189953804	0.9578615	0.8855491407353667	V11L12_MOSCOT_selected_genes_full_msi	cvae	{'hidden_dim': 128, 'latent_dim': 5, 'lr': 0.0015, 'epochs': 80, 'batch_size': 32}	6a56f35b55

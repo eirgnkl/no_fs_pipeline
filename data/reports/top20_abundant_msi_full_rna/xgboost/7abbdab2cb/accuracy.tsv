@@ -1,0 +1,2 @@
+rmse	mae	r2	pearson	spearman	task	method_name	method_params	hash
+0.3664188234145581	0.2785688156077075	0.07325870673255619	0.8223706984345024	0.8275734563807586	top20_abundant_msi_full_rna	xgboost	{'alpha': 50, 'lambda': 100, 'max_depth': 3, 'learning_rate': 0.05, 'n_estimators': 1000, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 3, 'early_stopping_rounds': 10, 'n_jobs': 20}	7abbdab2cb

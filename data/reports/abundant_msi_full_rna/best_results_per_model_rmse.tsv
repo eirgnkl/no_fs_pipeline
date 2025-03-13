@@ -1,0 +1,4 @@
+rmse	r2	pearson	spearman	task	method_name	method_params	hash	mae
+0.2889279532805077	0.1772225049588587	0.759539840732413	0.7628893465910338	abundant_msi_full_rna	xgboost	{'alpha': 10, 'lambda': 50, 'max_depth': 5, 'learning_rate': 0.01, 'n_estimators': 500, 'subsample': 0.9, 'colsample_bytree': 0.7, 'min_child_weight': 2, 'early_stopping_rounds': 20, 'n_jobs': 20}	280fca50d6	0.2225012598315868
+0.4764020683340725	-1.2470425250082933	0.5234026364019012	0.5488528338861526	abundant_msi_full_rna	ridge	{'alpha': 1.0}	6f8606a243	
+1.0037973084684857	-8.929790537144664	0.251396566249178	0.2940276835047774	abundant_msi_full_rna	linear	{'parm': 0}	ea688d48c6	0.7468590275515857
