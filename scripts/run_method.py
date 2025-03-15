@@ -8,6 +8,7 @@ from lasso import run_lasso
 from mxgboost import run_xgboost
 from elastic_net import run_elastic_net
 from cvae import run_cvae
+from gnn import run_gnn
 
 # Mapping method names to their respective functions
 METHOD_MAP = {
@@ -16,7 +17,9 @@ METHOD_MAP = {
     'linear': dict(function=run_linreg, mode='paired'),
     'xgboost': dict(function=run_xgboost, mode='paired'),
     'elastic_net': dict(function=run_elastic_net, mode='paired'),
-    'cvae': dict(function=run_cvae, mode='paired')
+    'cvae': dict(function=run_cvae, mode='paired'),
+    'gnn': dict(function=run_gnn, mode='paired')
+
 }
 
 # Load parameters from Snakemake
